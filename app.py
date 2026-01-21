@@ -1,11 +1,14 @@
+"""Prosta klasa do zarządzania listą zadań (CRUD)."""
 class TodoList:
     def __init__(self):
         self.tasks = []
 
+    """Dodaje nowe zadanie do listy."""
     def create(self, task):
         self.tasks.append(task)
         print(f"Zadanie '{task}' dodane.")
 
+    """Odczytuje zapisane w liście"""
     def read(self):
         if not self.tasks:
             print("Brak zadań.")
@@ -13,6 +16,7 @@ class TodoList:
             for i, task in enumerate(self.tasks, 1):
                 print(f"{i}. {task}")
 
+    """Edytacja zapisanego zdania"""
     def edit(self, index, new_task):
         if 1 <= index <= len(self.tasks):
             old_task = self.tasks[index-1]
@@ -20,7 +24,8 @@ class TodoList:
             print(f"Zadanie '{old_task}' zaktualizowane na '{new_task}'.")
         else:
             print("Nieprawidłowy indeks.")
-
+            
+    """Usuwa zapisane zdanie"""
     def delete(self, index):
         if 1 <= index <= len(self.tasks):
             removed = self.tasks.pop(index-1)
