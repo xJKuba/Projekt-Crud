@@ -13,7 +13,7 @@ class TodoList:
             for i, task in enumerate(self.tasks, 1):
                 print(f"{i}. {task}")
 
-    def update(self, index, new_task):
+    def edit(self, index, new_task):
         if 1 <= index <= len(self.tasks):
             old_task = self.tasks[index-1]
             self.tasks[index-1] = new_task
@@ -41,7 +41,7 @@ def main():
         elif choice == '3':
             index = int(input("Indeks do aktualizacji: "))
             new_task = input("Nowe zadanie: ")
-            todo.update(index, new_task)
+            todo.edit(index, new_task)
         elif choice == '4':
             index = int(input("Indeks do usunięcia: "))
             todo.delete(index)
