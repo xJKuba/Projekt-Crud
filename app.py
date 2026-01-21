@@ -27,11 +27,11 @@ class TodoList:
             print(f"Zadanie '{removed}' usunięte.")
         else:
             print("Nieprawidłowy indeks.")
-            
+
 def main():
     todo = TodoList()
     while True:
-        print("\nMenu: 1-Dodaj, 2-Wyświetl, 3-Aktualizuj, 4-Usuń, 5-Wyjdź")
+        print("\n=== Lista Zadań (Todo) ===\n1. Dodaj zadanie\n2. Wyświetl zadania\n3. Edytuj zadanie\n4. Usuń zadanie\n5. Wyjdź\n")
         choice = input("Wybierz: ")
         if choice == '1':
             task = input("Nowe zadanie: ")
