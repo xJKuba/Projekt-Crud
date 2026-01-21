@@ -14,7 +14,7 @@ class TodoList:
             print("❌ Brak zadań.")
         else:
             for i, task in enumerate(self.tasks, 1):
-                print(f"✔️ {i}. {task}")
+                print(f"🎯 {i}. {task}")
 
     """Edytacja zapisanego zdania"""
     def edit(self, index: int, new_task: str) -> None:
