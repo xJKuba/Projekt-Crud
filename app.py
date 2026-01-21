@@ -6,32 +6,32 @@ class TodoList:
     """Dodaje nowe zadanie do listy."""
     def create(self, task: str) -> None:
         self.tasks.append(task)
-        print(f"Zadanie '{task}' dodane.")
+        print(f"✔️ Zadanie '{task}' dodane.")
 
     """Odczytuje zapisane w liście"""
     def read(self) -> None:
         if not self.tasks:
-            print("Brak zadań.")
+            print("❌ Brak zadań.")
         else:
             for i, task in enumerate(self.tasks, 1):
-                print(f"{i}. {task}")
+                print(f"✔️ {i}. {task}")
 
     """Edytacja zapisanego zdania"""
     def edit(self, index: int, new_task: str) -> None:
         if 1 <= index <= len(self.tasks):
             old_task = self.tasks[index-1]
             self.tasks[index-1] = new_task
-            print(f"Zadanie '{old_task}' zaktualizowane na '{new_task}'.")
+            print(f"✔️ Zadanie '{old_task}' zaktualizowane na '{new_task}'.")
         else:
-            print("Nieprawidłowy indeks.")
+            print("❌ Nieprawidłowy indeks.")
 
     """Usuwa zapisane zdanie"""
     def delete(self, index) -> None:
         if 1 <= index <= len(self.tasks):
             removed = self.tasks.pop(index-1)
-            print(f"Zadanie '{removed}' usunięte.")
+            print(f"✔️ Zadanie '{removed}' usunięte.")
         else:
-            print("Nieprawidłowy indeks.")
+            print("❌ Nieprawidłowy indeks.")
 
 def main():
     todo = TodoList()
